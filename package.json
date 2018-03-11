@@ -4,8 +4,9 @@
   "description": "Description",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf dist",
     "build": "webpack -p",
+    "clean": "rimraf dist",
+    "clean build": "npm run clean && npm run build",
     "watch": "webpack --watch"
   },
   "author": "https://github.com/fabkru",
