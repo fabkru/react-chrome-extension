@@ -1,0 +1,33 @@
+{
+  // Required
+  "manifest_version": 2,
+  "name": "New Tab",
+  "author": "https://github.com/fabkru",
+  "version": "0",
+
+  // Recommended
+  "description": "Display bookmarks when you open a new tab.",
+  "icons": {
+    "24": "assets/icon_24x24.png",
+    "96": "assets/icon_96x96.png"
+  },
+
+  // Bar settings
+  "browser_action": {
+    "default_icon": "assets/icon_24x24.png",
+    "default_title": "New Tab"
+  },
+
+  // Functional
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "background": {
+    "scripts": ["background.bundle.js"]
+  },
+  "permissions": [
+    "activeTab",    // Required to relace the new tab
+    "contextMenus", // Required to add to context menu
+    "storage"       // Required to save cross-session
+  ]
+}
