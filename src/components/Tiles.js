@@ -6,8 +6,22 @@ class Tiles extends Component {
     super(props);
   }
 
+  onRemove(link) {
+    this.props.removeTile(link);
+  }
+
   render() {
-    return <div>{this.props.items.map(tile => <Tile link={tile} />)}</div>;
+    return (
+      <div>
+        {this.props.items.map(tile => (
+          <Tile
+            link={tile}
+            showRemoveButton={this.props.enableEditing}
+            removeTile={this.onRemove.bind(this)}
+          />
+        ))}
+      </div>
+    );
   }
 }
 
