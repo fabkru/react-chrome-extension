@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 //import StorageManager from '../utils/StorageManager';
 import Tiles from './Tiles';
+import { Button } from 'semantic-ui-react';
 
 class App extends Component {
 	constructor(props) {
@@ -20,7 +21,10 @@ class App extends Component {
 	}
 
 	render() {
-		return <Tiles items={this.state.tiles} />;
+		return <div>
+			<Button>Edit</Button>
+			<Tiles items={this.state.tiles} />
+		</div>;
 	}
 }
 

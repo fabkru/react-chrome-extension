@@ -25,14 +25,13 @@ module.exports = {
 			// Style
 			{
 				test: /\.css$/,
-				use: [
-					{
-						loader: 'style-loader'
-					},
-					{
-						loader: 'css-loader'
-					}
-				]
+				use: ['style-loader', 'css-loader']
+			},
+
+			// Images
+			{
+				test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+				use: ['file-loader?limit=100000']
 			}
 		]
 	},
