@@ -14,7 +14,6 @@ module.exports = {
 	},
 	module: {
 		rules: [
-
 			// Source
 			{
 				test: /\.(js)$/,

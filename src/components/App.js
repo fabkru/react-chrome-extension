@@ -1,30 +1,45 @@
-import React, {Component} from 'react';
-//import StorageManager from '../utils/StorageManager';
+import React, { Component } from 'react';
 import Tiles from './Tiles';
-import { Button } from 'semantic-ui-react';
+import { Container, Button } from 'semantic-ui-react';
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			editMode: false,
 			tiles: []
-		}
+		};
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		let callback = result => {
 			this.setState({
 				tiles: result.tiles
-			})
+			});
 		};
 		chrome.storage.local.get('tiles', callback);
 	}
 
+	toggleEditMode() {
+		let currentState = this.state.editMode;
+		this.setState({
+			editMode: !currentState
+		});
+	}
+
 	render() {
-		return <div>
-			<Button>Edit</Button>
-			<Tiles items={this.state.tiles} />
-		</div>;
+		return (
+			<Container>
+				<Button
+					content="Edit"
+					icon="edit"
+					labelPosition="left"
+					floated="right"
+					onClick={this.toggleEditMode.bind(this)}
+				/>
+				<Tiles items={this.state.tiles} />
+			</Container>
+		);
 	}
 }
 
