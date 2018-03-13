@@ -1,15 +1,19 @@
 let handleClick = event => {
   chrome.storage.local.get('tiles', result => {
-    chrome.tabs.captureVisibleTab(null, null, thumbnail => {
-      let tiles = result.tiles || [];
-      tiles.push({
-        link: event.pageUrl,
-        thumbnail: thumbnail
-      });
-      chrome.storage.local.set({
-        tiles: tiles
-      });
-    });
+    chrome.tabs.captureVisibleTab(
+      null,
+      { format: 'jpeg', quality: 50 },
+      thumbnail => {
+        let tiles = result.tiles || [];
+        tiles.push({
+          link: event.pageUrl,
+          thumbnail: thumbnail
+        });
+        chrome.storage.local.set({
+          tiles: tiles
+        });
+      }
+    );
   });
 };
 

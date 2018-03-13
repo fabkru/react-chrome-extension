@@ -19,6 +19,7 @@ class Tile extends Component {
           as={'a'}
           size={'medium'}
           href={this.props.link}
+		  bordered
         />
         {this.props.showRemoveButton ? (
           <Button content="Remove" negative onClick={this.handleRemove} />
