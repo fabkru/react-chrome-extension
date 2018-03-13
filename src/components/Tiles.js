@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Tile from './Tile';
+import { Grid } from 'semantic-ui-react';
 
 class Tiles extends Component {
   constructor(props) {
@@ -13,15 +14,18 @@ class Tiles extends Component {
 
   render() {
     return (
-      <div>
+      <Grid columns={4} padded>
         {this.props.items.map(tile => (
-          <Tile
-            link={tile}
-            showRemoveButton={this.props.enableEditing}
-            removeTile={this.onRemove.bind(this)}
-          />
+          <Grid.Column>
+            <Tile
+              link={tile.link}
+              thumbnail={tile.thumbnail}
+              showRemoveButton={this.props.enableEditing}
+              removeTile={this.onRemove}
+            />
+          </Grid.Column>
         ))}
-      </div>
+      </Grid>
     );
   }
 }

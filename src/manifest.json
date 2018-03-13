@@ -28,6 +28,7 @@
   "permissions": [
     "activeTab", // Required to relace the new tab
     "contextMenus", // Required to add to context menu
-    "storage" // Required to save cross-session
+    "storage", // Required to save cross-session
+    "<all_urls>" // Required for screenshots
   ]
 }

@@ -32,7 +32,7 @@ class App extends Component {
   removeTile(link) {
     let callback = result => {
       let currentState = result.tiles;
-      let nextState = currentState.filter(tile => tile !== link);
+      let nextState = currentState.filter(tile => tile.link !== link);
       chrome.storage.local.set({
         tiles: nextState
       });
@@ -44,6 +44,12 @@ class App extends Component {
   }
 
   render() {
+    // Render nothing when no tiles
+    if (this.state.tiles.length < 1) {
+      return false;
+    }
+
+    // Render tiles when atleast one tile
     return (
       <Container>
         <Button
