@@ -9,6 +9,8 @@ class App extends Component {
       editMode: false,
       tiles: []
     };
+    this.removeTile = this.removeTile.bind(this);
+    this.toggleEditMode = this.toggleEditMode.bind(this);
   }
 
   componentDidMount() {
@@ -49,12 +51,12 @@ class App extends Component {
           icon="edit"
           labelPosition="left"
           floated="right"
-          onClick={this.toggleEditMode.bind(this)}
+          onClick={this.toggleEditMode}
         />
         <Tiles
           items={this.state.tiles}
           enableEditing={this.state.editMode}
-          removeTile={this.removeTile.bind(this)}
+          removeTile={this.removeTile}
         />
       </Container>
     );

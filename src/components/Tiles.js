@@ -4,6 +4,7 @@ import Tile from './Tile';
 class Tiles extends Component {
   constructor(props) {
     super(props);
+    this.onRemove = this.onRemove.bind(this);
   }
 
   onRemove(link) {

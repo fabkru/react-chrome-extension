@@ -4,6 +4,7 @@ import { Button } from 'semantic-ui-react';
 class Tile extends Component {
   constructor(props) {
     super(props);
+    this.handleRemove = this.handleRemove.bind(this);
   }
 
   handleRemove() {
@@ -15,11 +16,7 @@ class Tile extends Component {
       <div>
         <a href={this.props.link}>{this.props.link}</a>
         {this.props.showRemoveButton ? (
-          <Button
-            content="Remove"
-            negative
-            onClick={this.handleRemove.bind(this)}
-          />
+          <Button content="Remove" negative onClick={this.handleRemove} />
         ) : null}
       </div>
     );
