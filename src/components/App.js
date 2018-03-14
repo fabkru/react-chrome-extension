@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Tiles from './Tiles';
+import Welcome from './Welcome';
 import { Container, Button } from 'semantic-ui-react';
 
 class App extends Component {
@@ -45,8 +46,12 @@ class App extends Component {
 
   render() {
     // Render nothing when no tiles
-    if (this.state.tiles.length < 1) {
-      return false;
+    if (!this.state.tiles || this.state.tiles.length < 1) {
+      return (
+        <Container>
+          <Welcome />
+        </Container>
+      );
     }
 
     // Render tiles when atleast one tile
