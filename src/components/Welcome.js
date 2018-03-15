@@ -8,8 +8,8 @@ class Tile extends Component {
 
   render() {
     return (
-      <Header as="h2">
-        <Icon name="info" />
+      <Header as={'h2'}>
+        <Icon name={'info'} />
         <Header.Content>
           Empty.
           <Header.Subheader>Add a tile by right-clicking.</Header.Subheader>

@@ -14,15 +14,13 @@ class Tile extends Component {
   render() {
     return (
       <div>
-        <Image
-          src={this.props.thumbnail}
-          as={'a'}
-          size={'medium'}
-          href={this.props.link}
-          bordered
-        />
+        <Image src={this.props.thumbnail} as={'a'} href={this.props.link} />
         {this.props.showRemoveButton ? (
-          <Button content="Remove" negative onClick={this.handleRemove} />
+          <Button
+            content={'Remove'}
+            size={'mini'}
+            onClick={this.handleRemove}
+          />
         ) : null}
       </div>
     );

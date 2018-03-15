@@ -45,10 +45,12 @@ class App extends Component {
   }
 
   render() {
-    // Render nothing when no tiles
+    // Render tutorial when empty
     if (!this.state.tiles || this.state.tiles.length < 1) {
       return (
         <Container>
+          <h1 className={'ui header left floated'}>New tab</h1>
+          <div className={'ui clearing divider'} />
           <Welcome />
         </Container>
       );
@@ -57,13 +59,15 @@ class App extends Component {
     // Render tiles when atleast one tile
     return (
       <Container>
+        <h1 className={'ui header left floated'}>New tab</h1>
         <Button
-          content="Edit"
-          icon="edit"
-          labelPosition="left"
-          floated="right"
+          id={'edit'}
+          content={'Edit'}
+          floated={'right'}
           onClick={this.toggleEditMode}
+          basic
         />
+        <div className={'ui clearing divider'} />
         <Tiles
           items={this.state.tiles}
           enableEditing={this.state.editMode}

@@ -1,3 +1,19 @@
+body {
+  background-color: #efefef !important;
+}
+
+.grid {
+  clear: both;
+}
+
 .container {
-    padding-top: 40px;
+  padding-top: 40px;
+}
+
+.button.mini {
+  margin-top: 10px;
+}
+
+#edit {
+  margin-right: 14px;
 }
