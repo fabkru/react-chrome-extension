@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Tiles from './Tiles';
 import Welcome from './Welcome';
 import { Container, Button } from 'semantic-ui-react';
+import Storage from '../utils/Storage';
+const storage = new Storage();
 
 class App extends Component {
   constructor(props) {
@@ -15,12 +17,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    let callback = result => {
+    storage.get('tiles').then(tiles => {
       this.setState({
-        tiles: result.tiles
+        tiles: tiles
       });
-    };
-    chrome.storage.local.get('tiles', callback);
+    });
   }
 
   toggleEditMode() {
@@ -31,17 +32,13 @@ class App extends Component {
   }
 
   removeTile(link) {
-    let callback = result => {
-      let currentState = result.tiles;
-      let nextState = currentState.filter(tile => tile.link !== link);
-      chrome.storage.local.set({
-        tiles: nextState
-      });
+    storage.get('tiles').then(tiles => {
+      let nextState = tiles.filter(tile => tile.link !== link);
+      storage.set('tiles', nextState);
       this.setState({
         tiles: nextState
       });
-    };
-    chrome.storage.local.get('tiles', callback);
+    });
   }
 
   render() {
