@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Tiles from './Tiles';
 import Welcome from './Welcome';
-import { Container, Button } from 'semantic-ui-react';
+import Button from './Button';
+import { Container } from 'semantic-ui-react';
 import Storage from '../utils/Storage';
 const storage = new Storage();
 
@@ -60,9 +61,8 @@ class App extends Component {
         <Button
           id={'edit'}
           content={'Edit'}
-          floated={'right'}
           onClick={this.toggleEditMode}
-          basic
+          additionalClassNames={'right floated'}
         />
         <div className={'ui clearing divider'} />
         <Tiles

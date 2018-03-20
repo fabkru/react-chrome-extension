@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<button
+  className="ui button undefined"
+  onClick={undefined}
+>
+  Test
+</button>
+`;
+
+exports[`does not render when isVisible is false 1`] = `null`;

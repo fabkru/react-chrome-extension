@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Image, Button } from 'semantic-ui-react';
+import { Image } from 'semantic-ui-react';
+import Button from './Button';
 
 class Tile extends Component {
   constructor(props) {
@@ -15,13 +16,11 @@ class Tile extends Component {
     return (
       <div>
         <Image src={this.props.thumbnail} as={'a'} href={this.props.link} />
-        {this.props.showRemoveButton ? (
-          <Button
-            content={'Remove'}
-            size={'mini'}
-            onClick={this.handleRemove}
-          />
-        ) : null}
+        <Button
+          content={'Remove'}
+          isVisible={this.props.showRemoveButton}
+          onClick={this.handleRemove}
+        />
       </div>
     );
   }
