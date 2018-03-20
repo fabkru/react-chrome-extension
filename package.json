@@ -6,9 +6,10 @@
   "scripts": {
     "build": "webpack -p",
     "precommit": "eslint src && jest",
-    "clean": "rimraf dist",
+    "clean": "rimraf dist && rimraf coverage",
     "eslint": "eslint src",
-    "test": "jest"
+    "test": "jest",
+    "code coverage": "jest --coverage"
   },
   "author": "https://github.com/fabkru",
   "license": "MIT",
