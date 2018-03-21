@@ -6,7 +6,7 @@ class Button extends Component {
   }
 
   getClassNames() {
-    if (this.props.additionalClassNames !== null) {
+    if (this.props.additionalClassNames) {
       return 'ui button ' + this.props.additionalClassNames;
     }
     return 'ui button';

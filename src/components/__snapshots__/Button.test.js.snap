@@ -1,8 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`can have additional class names 1`] = `
 <button
-  className="ui button undefined"
+  className="ui button test"
+  onClick={undefined}
+/>
+`;
+
+exports[`can hold content 1`] = `
+<button
+  className="ui button"
   onClick={undefined}
 >
   Test
@@ -10,3 +17,17 @@ exports[`renders correctly 1`] = `
 `;
 
 exports[`does not render when isVisible is false 1`] = `null`;
+
+exports[`does render when isVisible is true 1`] = `
+<button
+  className="ui button"
+  onClick={undefined}
+/>
+`;
+
+exports[`renders correctly 1`] = `
+<button
+  className="ui button"
+  onClick={undefined}
+/>
+`;
