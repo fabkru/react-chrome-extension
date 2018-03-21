@@ -16,7 +16,6 @@
     "jest": true
   },
   "extends": [
-    // Recommended rules by ESLint for common problems
     "eslint:recommended"
   ],
   "rules": {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Tiles from './Tiles';
+import Grid from './Grid';
 import Welcome from './Welcome';
 import Button from './Button';
 import { Container } from 'semantic-ui-react';
@@ -65,7 +65,7 @@ class App extends Component {
           additionalClassNames={'right floated'}
         />
         <div className={'ui clearing divider'} />
-        <Tiles
+        <Grid
           items={this.state.tiles}
           enableEditing={this.state.editMode}
           removeTile={this.removeTile}
