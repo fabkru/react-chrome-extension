@@ -4,12 +4,13 @@
   "description": "Description",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -p",
+    "build development": "webpack --mode development",
     "precommit": "eslint src && jest",
     "clean": "rimraf dist && rimraf coverage",
     "eslint": "eslint src",
     "test": "jest",
-    "code coverage": "jest --coverage"
+    "code coverage": "jest --coverage",
+    "build production": "webpack --mode production"
   },
   "author": "https://github.com/fabkru",
   "license": "MIT",
