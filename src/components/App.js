@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Grid from './Grid';
 import Welcome from './Welcome';
 import Button from './Button';
-import { Container } from 'semantic-ui-react';
 import Storage from '../utils/Storage';
 const storage = new Storage();
 
@@ -46,17 +45,17 @@ class App extends Component {
     // Render tutorial when empty
     if (!this.state.tiles || this.state.tiles.length < 1) {
       return (
-        <Container>
+        <div className={'ui container'}>
           <h1 className={'ui header left floated'}>New tab</h1>
           <div className={'ui clearing divider'} />
           <Welcome />
-        </Container>
+        </div>
       );
     }
 
     // Render tiles when atleast one tile
     return (
-      <Container>
+      <div className={'ui container'}>
         <h1 className={'ui header left floated'}>New tab</h1>
         <Button
           id={'edit'}
@@ -70,7 +69,7 @@ class App extends Component {
           enableEditing={this.state.editMode}
           removeTile={this.removeTile}
         />
-      </Container>
+      </div>
     );
   }
 }

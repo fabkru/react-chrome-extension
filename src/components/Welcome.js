@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Header, Icon } from 'semantic-ui-react';
 
 class Tile extends Component {
   constructor(props) {
@@ -8,13 +7,10 @@ class Tile extends Component {
 
   render() {
     return (
-      <Header as={'h2'}>
-        <Icon name={'info'} />
-        <Header.Content>
-          Empty.
-          <Header.Subheader>Add a tile by right-clicking.</Header.Subheader>
-        </Header.Content>
-      </Header>
+      <h2 className={'ui header'}>
+        Empty
+        <div className="sub header">Add a tile by right-clicking.</div>
+      </h2>
     );
   }
 }
