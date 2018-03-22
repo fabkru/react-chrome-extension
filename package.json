@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build development": "webpack --mode development",
-    "precommit": "eslint src && jest",
+    "precommit": "npm run eslint && npm run prettier && npm run test",
     "clean": "rimraf dist && rimraf coverage",
     "eslint": "eslint src",
     "test": "jest",
     "code coverage": "jest --coverage",
-    "build production": "webpack --mode production"
+    "build production": "webpack --mode production",
+    "prettier": "prettier --write --single-quote \"src/**/*.js\""
   },
   "author": "https://github.com/fabkru",
   "license": "MIT",
