@@ -8,12 +8,12 @@ class Tile extends Component {
   }
 
   onRemove() {
-    this.props.onRemove(this.props.link);
+    this.props.onRemove(this.props.id);
   }
 
   render() {
     return (
-      <div className={'column'}>
+      <div id={this.props.id} className={'column'}>
         <a href={this.props.link}>
           <img className={'ui medium image'} src={this.props.thumbnail} />
         </a>

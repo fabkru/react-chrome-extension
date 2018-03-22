@@ -7,8 +7,8 @@ class Grid extends Component {
     this.onRemove = this.onRemove.bind(this);
   }
 
-  onRemove(link) {
-    this.props.removeTile(link);
+  onRemove(id) {
+    this.props.removeTile(id);
   }
 
   render() {
@@ -16,6 +16,8 @@ class Grid extends Component {
       <div className={'ui four column grid padded'}>
         {this.props.items.map(tile => (
           <Tile
+            key={tile.id}
+            id={tile.id}
             link={tile.link}
             thumbnail={tile.thumbnail}
             showRemoveButton={this.props.enableEditing}

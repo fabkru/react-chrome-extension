@@ -31,9 +31,9 @@ class App extends Component {
     });
   }
 
-  removeTile(link) {
+  removeTile(id) {
     storage.get('tiles').then(tiles => {
-      let nextState = tiles.filter(tile => tile.link !== link);
+      let nextState = tiles.filter(tile => tile.id !== id);
       storage.set('tiles', nextState);
       this.setState({
         tiles: nextState
