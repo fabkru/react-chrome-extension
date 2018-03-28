@@ -59,10 +59,11 @@ class App extends Component {
         <h1 className={'ui header left floated'}>New tab</h1>
         <Button
           id={'edit'}
-          content={'Edit'}
           onClick={this.toggleEditMode}
           additionalClassNames={'right floated'}
-        />
+        >
+          Edit
+        </Button>
         <div className={'ui clearing divider'} />
         <Grid
           items={this.state.tiles}

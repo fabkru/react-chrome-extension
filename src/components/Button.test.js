@@ -8,7 +8,7 @@ it('renders correctly', () => {
 });
 
 it('can hold content', () => {
-  const tree = renderer.create(<Button content={'Test'} />).toJSON();
+  const tree = renderer.create(<Button>Test</Button>).toJSON();
   expect(tree).toMatchSnapshot();
 });
 

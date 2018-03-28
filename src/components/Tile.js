@@ -17,11 +17,9 @@ class Tile extends Component {
         <a href={this.props.link}>
           <img className={'ui medium image'} src={this.props.thumbnail} />
         </a>
-        <Button
-          content={'Remove'}
-          isVisible={this.props.showRemoveButton}
-          onClick={this.onRemove}
-        />
+        <Button isVisible={this.props.showRemoveButton} onClick={this.onRemove}>
+          Remove
+        </Button>
       </div>
     );
   }

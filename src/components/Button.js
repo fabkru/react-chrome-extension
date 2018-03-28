@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Button extends Component {
   constructor(props) {
@@ -6,10 +7,11 @@ class Button extends Component {
   }
 
   getClassNames() {
+    let defaultClasses = 'ui button';
     if (this.props.additionalClassNames) {
-      return 'ui button ' + this.props.additionalClassNames;
+      return defaultClasses + ' ' + this.props.additionalClassNames;
     }
-    return 'ui button';
+    return defaultClasses;
   }
 
   render() {
@@ -19,10 +21,17 @@ class Button extends Component {
 
     return (
       <button className={this.getClassNames()} onClick={this.props.onClick}>
-        {this.props.content}
+        {this.props.children}
       </button>
     );
   }
 }
+
+Button.propTypes = {
+  children: PropTypes.node,
+  onClick: PropTypes.func,
+  isVisible: PropTypes.bool,
+  additionalClassNames: PropTypes.string
+};
 
 export default Button;
