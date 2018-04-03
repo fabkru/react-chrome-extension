@@ -3,8 +3,8 @@
 
 ## Getting started  
 `npm install` to install the dependencies.  
-`npm run build` to create a development build with source maps.  
+`npm run "build development"` to create a development build with source maps.
 
 Other useful scripts:  
 `npm run precommit` will lint and test your repository.  
-`npm run code coverage` to generate a Jest code coverage report in './coverage'.
+`npm run "code coverage"` to generate a Jest code coverage report in './coverage'.
